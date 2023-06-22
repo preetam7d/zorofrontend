@@ -11,7 +11,7 @@ export default function Placeorder() {
     const { payment, setpayment } = usePaymentdata();
     const { count, setcount } = useCountdata();
     const placeorder = () => {
-        axios.post('http://localhost:5000/api/order', { shipping: shippings, payment: payment, items: cart._id, summery: count * cart.price }, { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => { setorderdata(res.data); navigate('/order') });
+        axios.post('https://backend-ffkf.onrender.com/api/order', { shipping: shippings, payment: payment, items: cart._id, summery: count * cart.price }, { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => { setorderdata(res.data); navigate('/order') });
     }
     return (
         <div className='placeorder'>

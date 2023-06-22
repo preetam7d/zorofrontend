@@ -46,7 +46,7 @@ export default function Home() {
     }
     useEffect(() => {
         setloading(true);
-        axios.get('http://localhost:5000/api/products/').then(res => { dispatch({ type: 'allproducts', payload: res.data }); setprodu(res.data); setloading(false) });
+        axios.get('https://backend-ffkf.onrender.com/api/products/').then(res => { dispatch({ type: 'allproducts', payload: res.data }); setprodu(res.data); setloading(false) });
         const timer = setTimeout(() => {
             setShowBanner(true);
         }, 3000);

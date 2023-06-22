@@ -23,16 +23,16 @@ export default function Admin() {
     }
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/api/products/', addproduct, { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => { window.location.reload(false); alert(res.data) });
+        axios.post('https://backend-ffkf.onrender.com/api/products/', addproduct, { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => { window.location.reload(false); alert(res.data) });
         setaddproduct({ sellername: '', title: '', description: '', price: '', image: '', category: '' })
     }
     const deleteproduct = (id) => {
         setloading(true);
-        axios.delete(`http://localhost:5000/api/products/${id}`).then(res => {setloading(false); window.location.reload(false); alert(res.data) });
+        axios.delete(`https://backend-ffkf.onrender.com/api/products/${id}`).then(res => {setloading(false); window.location.reload(false); alert(res.data) });
     }
     useEffect(() => {
         setloading(true);
-        axios.get('http://localhost:5000/api/products/').then(res => {dispatch({ type: 'allproducts', payload: res.data }); setloading(false)});
+        axios.get('https://backend-ffkf.onrender.com/api/products/').then(res => {dispatch({ type: 'allproducts', payload: res.data }); setloading(false)});
     }, []);
     if (loading) {
         return <Loading />

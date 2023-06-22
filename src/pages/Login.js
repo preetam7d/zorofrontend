@@ -13,7 +13,7 @@ export default function Login() {
     const submitHandler = (e) => {
         e.preventDefault();
         setloading(true);
-        axios.post('http://localhost:5000/api/auth/login', login).then(res => { localStorage.setItem('token', res.data.token); setloading(false); navigate('/') }).catch(err => alert(err.response.data));
+        axios.post('https://backend-ffkf.onrender.com/api/auth/login', login).then(res => { localStorage.setItem('token', res.data.token); setloading(false); navigate('/') }).catch(err => alert(err.response.data));
     }
     if (loading) {
         return <Loading />

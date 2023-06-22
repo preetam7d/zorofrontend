@@ -11,13 +11,13 @@ export default function Profile() {
     }
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.put('http://localhost:5000/api/user/', profile, { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => { setprofile(res.data); alert("profile updated sucssfully") });
+        axios.put('https://backend-ffkf.onrender.com/api/user/', profile, { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => { setprofile(res.data); alert("profile updated sucssfully") });
     }
     const changeHandler = (e) => {
         setprofile({ ...profile, [e.target.name]: e.target.value })
     }
     useEffect(() => {
-        axios.get('http://localhost:5000/api/user/', { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => setprofile(res.data));
+        axios.get('https://backend-ffkf.onrender.com/api/user/', { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => setprofile(res.data));
     }, []);
     return (
         <div className='profile'>

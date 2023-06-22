@@ -22,7 +22,7 @@ export default function Cart() {
     }
     useEffect(() => {
         setloading(true);
-        axios.get('http://localhost:5000/api/products/').then(res => { dispatch1({ type: 'allproducts', payload: res.data }); setloading(false) });
+        axios.get('https://backend-ffkf.onrender.com/api/products/').then(res => { dispatch1({ type: 'allproducts', payload: res.data }); setloading(false) });
     }, []);
     if (loading) {
         return <Loading />

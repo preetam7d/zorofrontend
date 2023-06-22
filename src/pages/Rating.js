@@ -11,7 +11,7 @@ export default function Rating({ rating, productid }) {
     }
     const submitHandler = (e) => {
         e.preventDefault();
-        axios.post(`http://localhost:5000/api/products/rating/${productid}`, reviews, { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => { alert(res.data); window.location.reload(false); });
+        axios.post(`https://backend-ffkf.onrender.com/api/products/rating/${productid}`, reviews, { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => { alert(res.data); window.location.reload(false); });
     }
     return (
         <div className='rating'>

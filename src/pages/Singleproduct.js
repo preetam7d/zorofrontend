@@ -22,7 +22,7 @@ export default function Singleproduct() {
     }
     useEffect(() => {
         setload(true);
-        axios.get(`http://localhost:5000/api/products/${id}`).then(
+        axios.get(`https://backend-ffkf.onrender.com/api/products/${id}`).then(
             res => {
                 setproduct(res.data);
                 setloading(false);

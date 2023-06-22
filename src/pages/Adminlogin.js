@@ -13,7 +13,7 @@ export default function Adminlogin() {
     const submitHandler = (e) => {
         e.preventDefault();
         setloading(true);
-        axios.post('http://localhost:5000/api/auth/admin', login).then(res => { alert(res.data); setloading(false); navigate('/admin') }).catch(err => {alert(err.response.data); setloading(false);});
+        axios.post('https://backend-ffkf.onrender.com/api/auth/admin', login).then(res => { alert(res.data); setloading(false); navigate('/admin') }).catch(err => {alert(err.response.data); setloading(false);});
     }
     if (loading) {
         return <Loading />

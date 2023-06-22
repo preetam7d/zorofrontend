@@ -8,7 +8,7 @@ export default function Orders() {
     const [orders, setorders] = useState([]);
     useEffect(() => {
         setloading(true);
-        axios.get('http://localhost:5000/api/order', { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => {setorders(res.data); setloading(false);})
+        axios.get('https://backend-ffkf.onrender.com/api/order', { headers: { 'x-token': `${localStorage.getItem('token')}` } }).then(res => {setorders(res.data); setloading(false);})
     }, []);
     if (loading) {
         return <Loading />
